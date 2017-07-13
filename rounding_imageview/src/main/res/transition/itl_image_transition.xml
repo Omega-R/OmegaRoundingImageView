@@ -1,0 +1,10 @@
+<transitionSet
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:interpolator/decelerate_cubic"
+    android:duration="500">
+
+    <changeBounds/>
+    <changeImageTransform/>
+    <transition class="com.omega_r.rounding_imageview.ImageTransition"/>
+
+</transitionSet>

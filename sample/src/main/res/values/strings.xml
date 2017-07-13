@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ImageTransition</string>
+    <string name="title_main_activity">Rounded Image Sample</string>
+    <string name="title_second_activity">Second Activity</string>
+    <string name="image">image</string>
+    <string name="desc_rate_this_app">Rate this app</string>
+    <string name="desc_github_link">Github link</string>
+    <string name="desc_about_this_app">About this app</string>
+    <string name="title_about_this_app_activity">About this app</string>
+    <string name="about_this_app_activity_content_intro">Rounded Image library inspired by:</string>
+    <string name="about_lib_title_circleimageview">Henning Dodenhof\'s CircleImageView</string>
+    <string name="about_lib_link_circleimageview">https://github.com/hdodenhof/CircleImageView</string>
+    <string name="about_lib_title_picasso">Picasso</string>
+    <string name="about_sources">You can find source code on</string>
+    <string name="about_omega">Omega-R</string>
+    <string name="about_lib_link_picasso">http://square.github.io/picasso/</string>
+    <string name="about_omega_link">https://github.com/orgs/Omega-R/</string>
+    <string name="label_first_activity">FIRST ACTIVITY</string>
+    <string name="label_second_activity">SECOND ACTIVITY</string>
+    <string name="label_instructions">Hold &amp; drag to move the image around\nClick to see the transition</string>
+    <string name="from_imageview_to_imageview">ImageView -> ImageView</string>
+    <string name="from_imageview_to_viewpager">ImageView -> ViewPager</string>
+    <string name="title_image_view_activity">Image View Activity</string>
+    <string name="select_start_scale_type">Start scale type</string>
+    <string name="select_end_scale_type">End scale type</string>
+    <string name="about">About</string>
+
+    <string-array name="scaletype_entries">
+        <item>Center Crop</item>
+        <item>Center Inside</item>
+        <item>Center</item>
+        <item>Fit Center</item>
+        <item>Fit XY</item>
+        <item>Fit Start</item>
+        <item>Fit End</item>
+        <item>Matrix</item>
+    </string-array>
+</resources>

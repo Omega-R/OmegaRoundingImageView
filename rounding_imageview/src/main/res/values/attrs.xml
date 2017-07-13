@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TransitionImageView">
+        <!-- Amount of rounding to apply. Assign `0f`
+             to have to no rounding at all.
+             Use `1f` to have perfectly rounded edges.
+             Values in-between will be interpolated. -->
+        <attr name="rounding" format="float" />
+        <attr name="image_offset_x" format="float" />
+        <attr name="image_offset_y" format="float" />
+    </declare-styleable>
+
+</resources>
