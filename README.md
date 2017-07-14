@@ -31,10 +31,10 @@ dependencies {
 Usage
 -----
 
-Use com.omega_r.rounding_imageview.TransitionImageView in place of ImageView. The `rounding` value can be set using `app:rounding` attribute. Value must be within [0,1] - **0** for no rounding, **1** for perfect rounding. Set `android:transitionName` attribute.
+Use com.omega_r.rounding_imageview.RoundingImageView in place of ImageView. The `rounding` value can be set using `app:rounding` attribute. Value must be within [0,1] - **0** for no rounding, **1** for perfect rounding. Set `android:transitionName` attribute.
 
 ```
-<com.omega_r.rounding_imageview.TransitionImageView
+<com.omega_r.rounding_imageview.RoundingImageView
     android:id="@+id/image"
     android:layout_width="80dp"
     android:layout_height="80dp"
@@ -46,7 +46,7 @@ Use com.omega_r.rounding_imageview.TransitionImageView in place of ImageView. Th
 Transition
 ----------
 
-Provide `@transition/itl_image_transition` as the value for `android:windowSharedElementEnterTransition` & `android:windowSharedElementExitTransition` under your Activity theme in `styles.xml`:
+Provide `@transition/image_transition` as the value for `android:windowSharedElementEnterTransition` & `android:windowSharedElementExitTransition` under your Activity theme in `styles.xml`:
 
 ```
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -58,8 +58,8 @@ Provide `@transition/itl_image_transition` as the value for `android:windowShare
     ....
 
     <!-- @transition/itl_image_transition is provided by ImageTransition library -->
-    <item name="android:windowSharedElementEnterTransition">@transition/itl_image_transition</item>
-    <item name="android:windowSharedElementExitTransition">@transition/itl_image_transition</item>
+    <item name="android:windowSharedElementEnterTransition">@transition/image_transition</item>
+    <item name="android:windowSharedElementExitTransition">@transition/image_transition</item>
 </style>
 ```
 
