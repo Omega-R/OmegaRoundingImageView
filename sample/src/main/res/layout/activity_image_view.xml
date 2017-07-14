@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.omega_r.rounding_imageview.TransitionImageView
+    <com.omega_r.rounding_imageview.RoundingImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:transitionName="@string/image"

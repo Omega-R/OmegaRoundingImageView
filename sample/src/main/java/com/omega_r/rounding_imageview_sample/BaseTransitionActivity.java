@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-
 public abstract class BaseTransitionActivity extends AppCompatActivity {
 
     private final String KEY_TRANSITION_ARGUMENTS = "transitionArguments";
@@ -21,13 +20,6 @@ public abstract class BaseTransitionActivity extends AppCompatActivity {
             Bundle bundle = extras.getParcelable(KEY_TRANSITION_ARGUMENTS);
             updateTransitionsArguments(bundle);
         }
-    }
-
-    @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-
-
     }
 
     @Override

@@ -40,25 +40,20 @@
             android:id="@+id/spinner_start_scaletype"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:spinnerMode="dropdown"
-            android:entries="@array/scaletype_entries"/>
+            android:layout_weight="1"/>
 
         <Spinner
             android:id="@+id/spinner_end_scaletype"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/scaletype_entries"/>
-
+            android:layout_weight="1"/>
     </LinearLayout>
 
-    <com.omega_r.rounding_imageview.TransitionImageView
+    <com.omega_r.rounding_imageview.RoundingImageView
         android:id="@+id/image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
-        android:scaleType="matrix"
         android:transitionName="@string/image"
         app:rounding="0.5"
         android:src="@drawable/sample"/>

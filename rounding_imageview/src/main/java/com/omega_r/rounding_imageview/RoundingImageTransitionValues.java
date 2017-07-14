@@ -1,6 +1,6 @@
 package com.omega_r.rounding_imageview;
 
-public class ImageTransitionValues {
+public class RoundingImageTransitionValues {
 
     public static final String KEY_IMAGE_START_ROUNDING = "imageStartRounding";
     public static final String KEY_IMAGE_END_ROUNDING = "imageEndRounding";
@@ -12,7 +12,7 @@ public class ImageTransitionValues {
     private float mStartRounding;
     private float mEndRounding;
 
-    public ImageTransitionValues(float startOffsetY, float endOffsetY, float startRounding, float endRounding) {
+    public RoundingImageTransitionValues(float startOffsetY, float endOffsetY, float startRounding, float endRounding) {
         mStartOffsetY = startOffsetY;
         mEndOffsetY = endOffsetY;
         mStartRounding = startRounding;

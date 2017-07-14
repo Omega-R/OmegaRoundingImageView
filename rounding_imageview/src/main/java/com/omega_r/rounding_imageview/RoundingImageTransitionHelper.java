@@ -27,19 +27,17 @@ import java.util.Collections;
 import java.util.Map;
 
 /**
- * Provides functionality for {@link ImageTransition}
- * and {@link ImageTransitionCompat}.
+ * Provides functionality for {@link RoundingImageTransition}
  */
-class ImageTransitionCompatHelper {
+
+class RoundingImageTransitionHelper {
 
     private static final String PROPNAME_ROUNDING_PROGRESS = "roundImage:roundingProgress";
-    private static final String PROPNAME_SCALE_TYPE = "roundImage:scaleType";
-    private static final String PROPNAME_END_SCALE_TYPE = "roundImage:endScaleType";
     private static final String PROPNAME_OFFSET_X = "roundImage:offsetX";
     private static final String PROPNAME_OFFSET_Y = "roundImage:offsetY";
 
     static String[] getTransitionProperties(String[] parentTransitionProperties) {
-        String[] properties = {PROPNAME_ROUNDING_PROGRESS, /*PROPNAME_SCALE_TYPE, PROPNAME_END_SCALE_TYPE,*/ PROPNAME_OFFSET_X, PROPNAME_OFFSET_Y};
+        String[] properties = {PROPNAME_ROUNDING_PROGRESS, PROPNAME_OFFSET_X, PROPNAME_OFFSET_Y};
 
         if (parentTransitionProperties == null || parentTransitionProperties.length == 0) {
             return properties;
@@ -52,16 +50,12 @@ class ImageTransitionCompatHelper {
     }
 
     static void captureValues(View view, Map<String, Object> values) {
-        if (view instanceof TransitionImageView) {
-            TransitionImageView transitionImageView = (TransitionImageView) view;
-            values.put(PROPNAME_ROUNDING_PROGRESS,
-                    transitionImageView.getRoundingProgress());
+        if (view instanceof RoundingImageView) {
+            RoundingImageView roundingImageView = (RoundingImageView) view;
 
-//            values.put(PROPNAME_SCALE_TYPE, transitionImageView.getScaleType());
-//            values.put(PROPNAME_END_SCALE_TYPE, transitionImageView.getTransitionEndScaleType());
-
-            values.put(PROPNAME_OFFSET_X, transitionImageView.getImageOffsetX());
-            values.put(PROPNAME_OFFSET_Y, transitionImageView.getImageOffsetY());
+            values.put(PROPNAME_ROUNDING_PROGRESS, roundingImageView.getRoundingProgress());
+            values.put(PROPNAME_OFFSET_X, roundingImageView.getImageOffsetX());
+            values.put(PROPNAME_OFFSET_Y, roundingImageView.getImageOffsetY());
         }
     }
 
@@ -69,7 +63,7 @@ class ImageTransitionCompatHelper {
                                    Map<String, Object> startValues,
                                    Map<String, Object> endValues) {
 
-        if (endValuesView instanceof TransitionImageView) {
+        if (endValuesView instanceof RoundingImageView) {
             Float startRoundingProgress = (Float) startValues.get(PROPNAME_ROUNDING_PROGRESS);
             Float endRoundingProgress = (Float) endValues.get(PROPNAME_ROUNDING_PROGRESS);
 
@@ -79,10 +73,10 @@ class ImageTransitionCompatHelper {
             Float endOffsetX = (Float) endValues.get(PROPNAME_OFFSET_X);
             Float endOffsetY = (Float) endValues.get(PROPNAME_OFFSET_Y);
 
-            final TransitionImageView view = (TransitionImageView) endValuesView;
+            final RoundingImageView view = (RoundingImageView) endValuesView;
 
             final ObjectAnimator roundingProgressAnimator = ObjectAnimator.ofFloat(endValuesView,
-                    TransitionImageView.ROUNDING_PROGRESS_PROPERTY,
+                    RoundingImageView.ROUNDING_PROGRESS_PROPERTY,
                     startRoundingProgress == null ? 0 : startRoundingProgress, endRoundingProgress == null ? 0 : endRoundingProgress);
 
             ValueAnimator offsetXAnimator = ValueAnimator.ofFloat(startOffsetX, endOffsetX);

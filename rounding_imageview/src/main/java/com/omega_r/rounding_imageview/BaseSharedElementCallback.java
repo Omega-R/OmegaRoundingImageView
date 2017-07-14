@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 public class BaseSharedElementCallback extends SharedElementCallback {
-    private ImageTransitionValues mValues;
+    private RoundingImageTransitionValues mValues;
 
-    public BaseSharedElementCallback(ImageTransitionValues values) {
+    public BaseSharedElementCallback(RoundingImageTransitionValues values) {
         mValues = values;
     }
 
@@ -34,8 +34,8 @@ public class BaseSharedElementCallback extends SharedElementCallback {
         super.onSharedElementStart(sharedElementNames, sharedElements, sharedElementSnapshots);
 
         for (View sharedElement : sharedElements) {
-            if (sharedElement instanceof TransitionImageView) {
-                TransitionImageView imageView = (TransitionImageView) sharedElement;
+            if (sharedElement instanceof RoundingImageView) {
+                RoundingImageView imageView = (RoundingImageView) sharedElement;
 
                 imageView.setRoundingProgress(mValues.getStartRounding());
                 imageView.setImageOffsetY(mValues.getStartOffsetY());
@@ -50,8 +50,8 @@ public class BaseSharedElementCallback extends SharedElementCallback {
         super.onSharedElementEnd(sharedElementNames, sharedElements, sharedElementSnapshots);
 
         for (View sharedElement : sharedElements) {
-            if (sharedElement instanceof TransitionImageView) {
-                TransitionImageView tiv = (TransitionImageView) sharedElement;
+            if (sharedElement instanceof RoundingImageView) {
+                RoundingImageView tiv = (RoundingImageView) sharedElement;
 
                 if (tiv.getRoundingProgress() == mValues.getStartRounding()) {
                     tiv.setRoundingProgress(mValues.getEndRounding());

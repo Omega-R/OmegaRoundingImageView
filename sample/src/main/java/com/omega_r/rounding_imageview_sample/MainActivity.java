@@ -1,19 +1,4 @@
-package com.omega_r.rounding_imageview_sample;/*
- * Copyright 2016 Vikram Kakkar
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
+package com.omega_r.rounding_imageview_sample;
 
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -27,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import com.omega_r.rounding_imageview.ImageTransitionValues;
+import com.omega_r.rounding_imageview.RoundingImageTransitionValues;
 
 
-public class MainActivity extends BaseActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class MainActivity extends BaseTransitionActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private RadioGroup mRadiogroup;
     private ImageView mImageView;
@@ -45,17 +30,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     };
 
     @Override
-    protected int getTitleId() {
-        return R.string.title_main_activity;
-    }
-
-    @Override
     protected Bundle getTransitionsArguments() {
         Bundle bundle = new Bundle();
-        bundle.putFloat(ImageTransitionValues.KEY_IMAGE_START_ROUNDING, 0.5f);
-        bundle.putFloat(ImageTransitionValues.KEY_IMAGE_END_ROUNDING, 0);
-        bundle.putFloat(ImageTransitionValues.KEY_IMAGE_START_OFFSET, 0);
-        bundle.putFloat(ImageTransitionValues.KEY_IMAGE_END_OFFSET, 0);
+        bundle.putFloat(RoundingImageTransitionValues.KEY_IMAGE_START_ROUNDING, 0.5f);
+        bundle.putFloat(RoundingImageTransitionValues.KEY_IMAGE_END_ROUNDING, 0);
+        bundle.putFloat(RoundingImageTransitionValues.KEY_IMAGE_START_OFFSET, 0);
+        bundle.putFloat(RoundingImageTransitionValues.KEY_IMAGE_END_OFFSET, 0);
         return bundle;
     }
 

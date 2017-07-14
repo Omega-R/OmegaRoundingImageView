@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.omega_r.rounding_imageview_sample">
+          package="com.omega_r.rounding_imageview_sample">
 
     <application
         android:allowBackup="true"
@@ -8,20 +8,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.omega_r.rounding_imageview_sample.MainActivity">
+        <activity
+            android:name="com.omega_r.rounding_imageview_sample.MainActivity"
+            android:label="@string/title_main_activity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name="com.omega_r.rounding_imageview_sample.ImageViewActivity"
-            android:label="@string/title_second_activity"/>
+            android:label="@string/title_image_view_activity"/>
         <activity
             android:name="com.omega_r.rounding_imageview_sample.ViewPagerActivity"
-            android:label="@string/title_second_activity"/>
-        <activity android:name="com.omega_r.rounding_imageview_sample.AboutActivity"
+            android:label="@string/title_viewpager_activity"/>
+        <activity
+            android:name="com.omega_r.rounding_imageview_sample.AboutActivity"
             android:label="@string/title_about_this_app_activity"/>
     </application>
 

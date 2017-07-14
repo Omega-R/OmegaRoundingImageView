@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="TransitionImageView">
+    <declare-styleable name="RoundingImageView">
         <!-- Amount of rounding to apply. Assign `0f`
              to have to no rounding at all.
              Use `1f` to have perfectly rounded edges.

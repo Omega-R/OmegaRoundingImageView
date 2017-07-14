@@ -11,13 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.omega_r.rounding_imageview.ImageTransitionUtil;
-import com.omega_r.rounding_imageview.ImageTransitionValues;
+import com.omega_r.rounding_imageview.RoundingImageTransitionUtil;
+import com.omega_r.rounding_imageview.RoundingImageTransitionValues;
 
 
-public class ViewPagerActivity extends BaseTransitionActivity {
-
-    private ViewPager mViewPager;
+public class ViewPagerActivity extends BaseActivity {
 
     private static final String EXTRA_SCALE_TYPE = "scaleType";
 
@@ -34,14 +32,14 @@ public class ViewPagerActivity extends BaseTransitionActivity {
 
     @Override
     protected void updateTransitionsArguments(Bundle bundle) {
-        float startRounding = bundle.getFloat(ImageTransitionValues.KEY_IMAGE_START_ROUNDING);
-        float endRounding = bundle.getFloat(ImageTransitionValues.KEY_IMAGE_END_ROUNDING);
-        float startOffsetY = bundle.getFloat(ImageTransitionValues.KEY_IMAGE_START_OFFSET);
-        float endOffsetY = bundle.getFloat(ImageTransitionValues.KEY_IMAGE_END_OFFSET);
+        float startRounding = bundle.getFloat(RoundingImageTransitionValues.KEY_IMAGE_START_ROUNDING);
+        float endRounding = bundle.getFloat(RoundingImageTransitionValues.KEY_IMAGE_END_ROUNDING);
+        float startOffsetY = bundle.getFloat(RoundingImageTransitionValues.KEY_IMAGE_START_OFFSET);
+        float endOffsetY = bundle.getFloat(RoundingImageTransitionValues.KEY_IMAGE_END_OFFSET);
 
-        ImageTransitionValues values = new ImageTransitionValues(startOffsetY, endOffsetY, startRounding, endRounding);
+        RoundingImageTransitionValues values = new RoundingImageTransitionValues(startOffsetY, endOffsetY, startRounding, endRounding);
 
-        setEnterSharedElementCallback(ImageTransitionUtil.getCallback(values));
+        setEnterSharedElementCallback(RoundingImageTransitionUtil.getCallback(values));
     }
 
     @Override
@@ -49,8 +47,8 @@ public class ViewPagerActivity extends BaseTransitionActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager);
 
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        mViewPager.setAdapter(new PagerAdapter() {
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setAdapter(new PagerAdapter() {
             @Override
             public int getCount() {
                 return 5;
@@ -77,6 +75,6 @@ public class ViewPagerActivity extends BaseTransitionActivity {
                 container.removeView((View) object);
             }
         });
-        mViewPager.invalidate();
+        viewPager.invalidate();
     }
 }

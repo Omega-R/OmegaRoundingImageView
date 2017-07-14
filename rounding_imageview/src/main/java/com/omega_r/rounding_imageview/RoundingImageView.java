@@ -1,35 +1,4 @@
-package com.omega_r.rounding_imageview;/*
- * Copyright 2014 - 2016 Henning Dodenhof
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/*
- * Copyright 2016 Vikram Kakkar
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
+package com.omega_r.rounding_imageview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -52,28 +21,7 @@ import android.util.Property;
 import android.view.View;
 import android.widget.ImageView;
 
-/**
- * This is an edited version of 'Henning Dodenhof's' library project
- * that can be found here: https://github.com/hdodenhof/CircleImageView.
- * <p>
- * Many thanks to 'Henning Dodenhof' for open-sourcing their work.
- * <p>
- * Modifications:
- * <p>
- * For transition support, a 'rounding' variable has been
- * introduced. This value is bounded in [0f,1f] and provides
- * varying degrees of 'rounding'. At '0f', no rounding is applied.
- * A value of `1f` provides perfect rounding - (w == h) implies this view
- * is circular.
- * <p>
- * Several features have been removed:
- * <p>
- * - No support for drawing borders
- * - No support of fill color
- * - No 'disable' option - use {@link TransitionImageView#setRoundingProgress(float)}
- * with RoundingProgress#MIN#progressValue() instead
- */
-public class TransitionImageView extends ImageView {
+public class RoundingImageView extends ImageView {
 
     private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
     private static final int COLORDRAWABLE_DIMENSION = 2;
@@ -150,33 +98,33 @@ public class TransitionImageView extends ImageView {
 
         @Override
         public void set(View object, Float value) {
-            if (object instanceof TransitionImageView) {
+            if (object instanceof RoundingImageView) {
 
-                ((TransitionImageView) object).setRoundingProgress(value);
+                ((RoundingImageView) object).setRoundingProgress(value);
             }
         }
     };
 
-    public TransitionImageView(Context context) {
+    public RoundingImageView(Context context) {
         super(context);
         mRoundingProgress = RoundingProgress.MAX.progressValue();
         init();
     }
 
-    public TransitionImageView(Context context, AttributeSet attrs) {
+    public RoundingImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public TransitionImageView(Context context, AttributeSet attrs, int defStyle) {
+    public RoundingImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TransitionImageView, defStyle, 0);
-        mRoundingProgress = constrain(a.getFloat(R.styleable.TransitionImageView_rounding,
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundingImageView, defStyle, 0);
+        mRoundingProgress = constrain(a.getFloat(R.styleable.RoundingImageView_rounding,
                 RoundingProgress.MAX.progressValue()), RoundingProgress.MIN.progressValue(),
                 RoundingProgress.MAX.progressValue());
 
-        mImageOffsetX = a.getFloat(R.styleable.TransitionImageView_image_offset_x, 0.5f);
-        mImageOffsetY = a.getFloat(R.styleable.TransitionImageView_image_offset_y, 0.5f);
+        mImageOffsetX = a.getFloat(R.styleable.RoundingImageView_image_offset_x, 0.5f);
+        mImageOffsetY = a.getFloat(R.styleable.RoundingImageView_image_offset_y, 0.5f);
 
         a.recycle();
         init();
@@ -195,12 +143,6 @@ public class TransitionImageView extends ImageView {
         if (adjustViewBounds) {
             throw new IllegalArgumentException("adjustViewBounds not supported.");
         }
-    }
-
-    @Override
-    public void setScaleType(ScaleType scaleType) {
-        super.setScaleType(scaleType);
-        setup();
     }
 
     @Override

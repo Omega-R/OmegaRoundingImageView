@@ -5,6 +5,6 @@
 
     <changeBounds/>
     <changeImageTransform/>
-    <transition class="com.omega_r.rounding_imageview.ImageTransition"/>
+    <transition class="com.omega_r.rounding_imageview.RoundingImageTransition"/>
 
 </transitionSet>
