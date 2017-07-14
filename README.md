@@ -40,7 +40,7 @@ Use com.omega_r.rounding_imageview.RoundingImageView in place of ImageView. The 
     android:layout_height="80dp"
     android:scaleType="centerCrop"
     android:transitionName="@string/iv_transition_name"
-    app:tiv_rounding="0"/>
+    app:rounding="0"/>
 ```    
 
 Transition
