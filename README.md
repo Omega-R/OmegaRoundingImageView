@@ -57,7 +57,7 @@ Provide `@transition/image_transition` as the value for `android:windowSharedEle
     ....
     ....
 
-    <!-- @transition/itl_image_transition is provided by ImageTransition library -->
+    <!-- @transition/image_transition is provided by ImageTransition library -->
     <item name="android:windowSharedElementEnterTransition">@transition/image_transition</item>
     <item name="android:windowSharedElementExitTransition">@transition/image_transition</item>
 </style>
