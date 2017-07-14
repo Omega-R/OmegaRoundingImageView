@@ -43,7 +43,7 @@ Use com.omega_r.rounding_imageview.RoundingImageView in place of ImageView. The 
     app:rounding="0"/>
 ```    
 
-Transition
+Transitio
 ----------
 
 Provide `@transition/image_transition` as the value for `android:windowSharedElementEnterTransition` & `android:windowSharedElementExitTransition` under your Activity theme in `styles.xml`:
