@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ImageTransition</string>
+    <string name="app_name">Rounding Image</string>
     <string name="title_main_activity">Rounded Image Sample</string>
     <string name="title_second_activity">Second Activity</string>
     <string name="image">image</string>

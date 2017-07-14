@@ -17,12 +17,10 @@
         </activity>
         <activity
             android:name="com.omega_r.rounding_imageview_sample.ImageViewActivity"
-            android:label="@string/title_second_activity"
-            android:theme="@style/AppTheme.Second"/>
+            android:label="@string/title_second_activity"/>
         <activity
             android:name="com.omega_r.rounding_imageview_sample.ViewPagerActivity"
-            android:label="@string/title_second_activity"
-            android:theme="@style/AppTheme.Second"/>
+            android:label="@string/title_second_activity"/>
         <activity android:name="com.omega_r.rounding_imageview_sample.AboutActivity"
             android:label="@string/title_about_this_app_activity"/>
     </application>

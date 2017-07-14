@@ -8,8 +8,4 @@
 
     <style name="AppTheme" parent="BaseAppTheme"/>
 
-    <style name="AppTheme.Second" parent="AppTheme">
-        <item name="android:windowBackground">@color/colorBgSecondAct</item>
-    </style>
-
 </resources>

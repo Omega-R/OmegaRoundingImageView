@@ -34,10 +34,10 @@ public class ViewPagerActivity extends BaseTransitionActivity {
 
     @Override
     protected void updateTransitionsArguments(Bundle bundle) {
-        int startRounding = bundle.getInt(ImageTransitionValues.KEY_IMAGE_START_ROUNDING);
-        int endRounding = bundle.getInt(ImageTransitionValues.KEY_IMAGE_END_ROUNDING);
-        int startOffsetY = bundle.getInt(ImageTransitionValues.KEY_IMAGE_START_OFFSET);
-        int endOffsetY = bundle.getInt(ImageTransitionValues.KEY_IMAGE_END_OFFSET);
+        float startRounding = bundle.getFloat(ImageTransitionValues.KEY_IMAGE_START_ROUNDING);
+        float endRounding = bundle.getFloat(ImageTransitionValues.KEY_IMAGE_END_ROUNDING);
+        float startOffsetY = bundle.getFloat(ImageTransitionValues.KEY_IMAGE_START_OFFSET);
+        float endOffsetY = bundle.getFloat(ImageTransitionValues.KEY_IMAGE_END_OFFSET);
 
         ImageTransitionValues values = new ImageTransitionValues(startOffsetY, endOffsetY, startRounding, endRounding);
 

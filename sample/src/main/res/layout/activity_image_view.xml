@@ -13,5 +13,4 @@
         android:src="@drawable/sample"
         android:id="@+id/image"/>
 
-
 </LinearLayout>
